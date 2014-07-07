@@ -84,11 +84,11 @@ func main() {
 	// wait for traversal results and print
 	close(results) // no more results
 	<-done         // wait for final results and sorting
+	𝛥t := float64(time.Since(now)) / 1e9
+	
 	for _, r := range result {
 		fmt.Printf("%s\n", r)
 	}
-
-	𝛥t := float64(time.Since(now)) / 1e9
 
 	// print optional verbose summary report
 	if *verbose {
